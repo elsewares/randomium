@@ -1,1 +1,8 @@
-<p class="flex-0">{{displayWord()}}</p>
+<p class="flex-0">
+  <ng-container *ngIf="fetchedWords && fetchedWords[0] !== ''">
+    <ng-container *ngFor="let word of fetchedWords; index as i">
+      <a (click)="changeWord(i)">{{ word }}</a>
+      <span *ngIf="i === 0"> | </span>
+    </ng-container>
+  </ng-container>
+</p>

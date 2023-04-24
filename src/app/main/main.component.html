@@ -1,8 +1,8 @@
 <div class="flex-container">
   <div class="flex-item flex-0 mb-1">
-    <app-random-word [word]="word"></app-random-word>
+    <app-random-word [words]="words" [changeWord]="changeWord"></app-random-word>
   </div>
   <div class="flex-item flex-0 mb-1">
-    <app-generated-image [searchTerm]="word"></app-generated-image>
+    <app-generated-image [words]="words"></app-generated-image>
   </div>
 </div>

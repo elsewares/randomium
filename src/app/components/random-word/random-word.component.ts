@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {WordService} from "../../services/word.service";
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Observable} from "rxjs";
 
 @Component({
@@ -9,15 +8,18 @@ import {Observable} from "rxjs";
 })
 export class RandomWordComponent implements OnInit {
 
-  @Input() word: string = '';
+  @Input() words: Observable<string[]> | undefined;
+  @Input() changeWord:Function = () => {};
 
-  constructor(private wordSvc:WordService) {}
+  fetchedWords: string[] = [];
+  constructor () {}
 
   ngOnInit(): void {
-
+    this.words?.subscribe({
+      next: (data: string[]) => {
+        this.fetchedWords = data;
+      }
+    });
   }
 
-  displayWord (): string {
-    return this.word;
-  }
 }
