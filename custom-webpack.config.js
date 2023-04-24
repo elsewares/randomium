@@ -7,10 +7,6 @@ require('dotenv').config();
 // customize your build beyond what Angular provides.
 module.exports = {
   plugins: [
-    new EnvironmentPlugin([
-      // Insert the keys to your environment variables here.
-      // Eg: APP_API_ENDPOINT="http://localhost:3000/api/v1"
-      OPEN_AI_API_KEY=process.env.OPEN_AI_API_KEY
-    ])
+    new EnvironmentPlugin(['OPEN_AI_API_KEY'])
   ]
 }
