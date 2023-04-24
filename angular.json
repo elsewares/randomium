@@ -21,9 +21,9 @@
               "path": "./custom-webpack.config.js",
               "mergeRules": {
                 "externals": "replace"
-              }
+              },
+              "replaceDuplicatePlugins": true
             },
-            "replaceDuplicatePlugins": true,
             "outputPath": "dist/randomium",
             "index": "src/index.html",
             "main": "src/main.ts",
